@@ -33,7 +33,6 @@ public struct JKIndicator: View {
     public var body: some View {
         if isVisible {
             indicator
-                .frame(width: 50, height: 50)
         } else {
             EmptyView()
         }
@@ -43,28 +42,40 @@ public struct JKIndicator: View {
     
     private var indicator: some View {
         ZStack {
+            Color.black.opacity(0.6).ignoresSafeArea()
             switch type {
             case .default(let count):
                 DefaultIndicatorView(count: count)
+                    .frame(width: 50, height: 50)
             case .arcs(let count, let lineWidth):
                 ArcsIndicatorView(count: count, lineWidth: lineWidth)
+                    .frame(width: 50, height: 50)
             case .rotatingDots(let count):
                 RotatingDotsIndicatorView(count: count)
+                    .frame(width: 50, height: 50)
             case .flickeringDots(let count):
                 FlickeringDotsIndicatorView(count: count)
+                    .frame(width: 50, height: 50)
             case .scalingDots(let count, let inset):
                 ScalingDotsIndicatorView(count: count, inset: inset)
+                    .frame(width: 50, height: 50)
             case .opacityDots(let count, let inset):
                 OpacityDotsIndicatorView(count: count, inset: inset)
+                    .frame(width: 50, height: 50)
             case .equalizer(let count):
                 EqualizerIndicatorView(count: count)
+                    .frame(width: 50, height: 50)
             case .growingArc(let color, let lineWidth):
                 GrowingArcIndicatorView(color: color, lineWidth: lineWidth)
+                    .frame(width: 50, height: 50)
             case .growingCircle:
                 GrowingCircleIndicatorView()
+                    .frame(width: 50, height: 50)
             case .gradient(let colors, let lineCap, let lineWidth):
                 GradientIndicatorView(colors: colors, lineCap: lineCap, lineWidth: lineWidth)
+                    .frame(width: 50, height: 50)
             }
         }
+        .allowsHitTesting(false)
     }
 }

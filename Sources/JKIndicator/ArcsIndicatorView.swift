@@ -34,7 +34,7 @@ struct ArcsIndicatorItemView: View {
 
     var body: some View {
         let animation = Animation.default
-            .speed(Double.random(in: 0.2...0.5))
+            .speed(Double.random(in: 0.2...0.7))
             .repeatForever(autoreverses: false)
 
         return Group { () -> Path in

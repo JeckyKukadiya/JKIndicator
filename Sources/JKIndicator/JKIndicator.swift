@@ -42,7 +42,7 @@ public struct JKIndicator: View {
     
     private var indicator: some View {
         ZStack {
-            Color.black.opacity(0.6).ignoresSafeArea()
+            Color.black.opacity(0.7).ignoresSafeArea()
             switch type {
             case .default(let count):
                 DefaultIndicatorView(count: count)
